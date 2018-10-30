@@ -312,6 +312,9 @@ class Channel(TembaModel):
     CONFIG_NEXMO_APP_ID = "nexmo_app_id"
     CONFIG_NEXMO_APP_PRIVATE_KEY = "nexmo_app_private_key"
 
+    CONFIG_APPLE_BUSINESS_ID = "business_id"
+    CONFIG_APPLE_BUSINESS_CHAT_CSP_ID = "csp_id"
+
     CONFIG_SHORTCODE_MATCHING_PREFIXES = "matching_prefixes"
 
     ENCODING_DEFAULT = "D"  # we just pass the text down to the endpoint

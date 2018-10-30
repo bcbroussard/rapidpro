@@ -60,6 +60,7 @@ TWITTER_SCHEME = "twitter"
 TWITTERID_SCHEME = "twitterid"
 VIBER_SCHEME = "viber"
 FCM_SCHEME = "fcm"
+APPLE_BUSINESS_CHAT_SCHEME = "applechat"
 WHATSAPP_SCHEME = "whatsapp"
 WECHAT_SCHEME = "wechat"
 
@@ -80,6 +81,7 @@ URN_SCHEME_CONFIG = (
     (WECHAT_SCHEME, _("WeChat identifier"), WECHAT_SCHEME),
     (FCM_SCHEME, _("Firebase Cloud Messaging identifier"), FCM_SCHEME),
     (WHATSAPP_SCHEME, _("WhatsApp identifier"), WHATSAPP_SCHEME),
+    (APPLE_BUSINESS_CHAT_SCHEME, _("Apple Business Chat identifier"), APPLE_BUSINESS_CHAT_SCHEME),
 )
 
 
@@ -340,6 +342,10 @@ class URN(object):
     @classmethod
     def from_fcm(cls, path):
         return cls.from_parts(FCM_SCHEME, path)
+
+    @classmethod
+    def from_applebusinesschat(cls, path):
+        return cls.from_parts(APPLE_BUSINESS_CHAT_SCHEME, path)
 
     @classmethod
     def from_jiochat(cls, path):
@@ -2375,6 +2381,7 @@ class ContactURN(models.Model):
         TELEGRAM_SCHEME: 90,
         VIBER_SCHEME: 90,
         FCM_SCHEME: 90,
+        APPLE_BUSINESS_CHAT_SCHEME: 90,
     }
 
     ANON_MASK = "*" * 8  # Returned instead of URN values for anon orgs
